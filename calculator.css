@@ -74,8 +74,17 @@ body {
 	background: linear-gradient(120deg, red, gold);
 }
 
+.backspace:hover {
+	background: linear-gradient(60deg, blue, purple);
+}
+
+
 .del {
 	background: linear-gradient(90deg, red, gold);
+}
+
+.del:hover {
+	background: linear-gradient(60deg, blue, purple);
 }
 
 .zifra {
@@ -87,6 +96,10 @@ body {
 	width: 195px;
 }
 
+.equel:hover {
+	background: linear-gradient(60deg, blue, purple);
+}
+
 .zero {
-	border-bottom-left-radius: 5%;
+	border-bottom-left-radius: 10%;
 }

@@ -1,25 +1,40 @@
 let schet = document.querySelector('.schet');
 let result = document.querySelector('.result');
-let writes = document.querySelectorAll('.write');
 let del = document.querySelector('.del');
-let equel = document.querySelector('.equel');
 let backspace = document.querySelector('.backspace');
+let writes = document.querySelectorAll(".write");
 
-writes.forEach(item => {
+writes.forEach((item) => {
    item.addEventListener('click', () => {
-      schet.value = schet.value + item.textContent;  
+      schet.value = schet.value + item.textContent;
+
+      // switch(schet.value) {
+      //   case ~schet.value.indexOf("П"): console.log(Math.PI);
+      //   break;
+      //   case schet.value.includes("e"): schet.value = schet.value + Math.E; 
+      //   break;
+      //   // case 'sin(`${schet.value}`)':
+      //   //       if(equel()) {
+      //   //          result.value = Math.sin((schet.value));
+      //   //       }
+      //   // break;
+      // }
    });
 });
 
-equel.addEventListener('click', () => {
-   if(eval(schet.value)  === undefined) {
-   	  result.value = "Ой-ой, что-то пошло не так))";
-   	  schet.value = "";
-   } else {
-      result.value = eval(schet.value); //Все работает)
-      // schet.value = eval(schet.value);
-   }
-});
+let equel = function() {
+  switch(eval(schet.value)) {
+     case undefined: 
+          result.value = "Ой-ой, что-то пошло не так))";
+          schet.value = "";
+     break;
+     case Infinity: 
+          result.value = "Бесконечность))";
+          schet.value = "";
+     break;
+     default: result.value = eval(schet.value);
+  }
+}
 
 del.addEventListener('click', () => {
    result.value = "";
@@ -28,7 +43,7 @@ del.addEventListener('click', () => {
 
 backspace.addEventListener('click', () => {
     schet.value = schet.value.substring(0, schet.value.length-1); 
-    result.value = result.value.substring(0, result.value.length-1);
+    // result.value = result.value.substring(0, result.value.length-1);
 });
 
 // backspace.addEventListener('mousepressed', () => {
